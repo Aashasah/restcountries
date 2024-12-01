@@ -10,7 +10,8 @@ const AllCountries = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
+    
+     axios
       .get('https://restcountries.com/v3.1/all')
       .then((response) => {
         setCountries(response.data);
@@ -22,7 +23,7 @@ const AllCountries = () => {
       });
   }, []);
 
-
+console.log(countries)
 
   const getcountryByRegion=async(regionName)=>{
     try{
@@ -71,7 +72,7 @@ const AllCountries = () => {
 <div className='container mx-auto py-3'>
 <div className='shadow-2xl rounded-md  text-center mx-auto'>     
 <div className='cc ' key={country}>
-    <img src={country.flags[1]} alt="" />
+    <img src={country.flags.png} alt="" />
 </div>
 <div className='cd'>
     <h3 className='font-bold text-2xl'>
